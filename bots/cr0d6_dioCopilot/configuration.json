@@ -1,0 +1,13 @@
+{
+  "$kind": "BotConfiguration",
+  "gPTSettings": {
+    "$kind": "GPTSettings",
+    "defaultSchemaName": "cr0d6_dioCopilot.gpt.default"
+  },
+  "aISettings": {
+    "$kind": "AISettings",
+    "useModelKnowledge": true,
+    "isSemanticSearchEnabled": true,
+    "optInUseLatestModels": false
+  }
+}

@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr0d6_dioCopilot.entity.UrldeLocais">
+  <componenttype>11</componenttype>
+  <description>Esta entidade é responsavel por capturar a URL dos locais que a pessoa quer se inspirar</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Url de Locais</name>
+  <parentbotid>
+    <schemaname>cr0d6_dioCopilot</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

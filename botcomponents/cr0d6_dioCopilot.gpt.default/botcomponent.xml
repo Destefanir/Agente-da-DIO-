@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr0d6_dioCopilot.gpt.default">
+  <componenttype>15</componenttype>
+  <description>Este copiloto vai ser responsável por responder todas as dúvidas de IA.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>DIO copilot</name>
+  <parentbotid>
+    <schemaname>cr0d6_dioCopilot</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

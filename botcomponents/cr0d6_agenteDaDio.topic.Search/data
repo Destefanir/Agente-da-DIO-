@@ -1,0 +1,34 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnUnknownIntent
+  id: main
+  priority: -1
+  actions:
+    - kind: SearchAndSummarizeContent
+      id: search-content
+      variable: Topic.Answer
+      userInput: =System.Activity.Text
+      additionalInstructions: |-
+        Buscar dados do AI Builder com base na pergunta do usuário:
+        {System.Activity.Text}
+      applyModelKnowledgeSetting: false
+
+    - kind: ConditionGroup
+      id: has-answer-conditions
+      conditions:
+        - id: has-answer
+          condition: =!IsBlank(Topic.Answer)
+          actions:
+            - kind: EndDialog
+              id: end-topic
+              clearTopicQueue: true
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_IODd3H
+          activity: |-
+            Olá {System.User.PrincipalName}
+            Desculpa, mas não foi possível encontrar a resposta que você estava esperando.
+            
+            Entre em contato com o: **(11) 4000-4000**
+            ou **contato@suporte.com.br**

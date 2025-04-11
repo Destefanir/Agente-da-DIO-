@@ -1,0 +1,38 @@
+kind: ClosedListEntity
+smartMatchingEnabled: true
+items:
+  - id: ahRfLE
+    displayName: Praia
+    synonyms:
+      - agua salgada
+      - mar
+      - areia
+      - paia
+
+  - id: skmECD
+    displayName: Campo
+    synonyms:
+      - espaço ao ar livre
+      - verde
+      - gramado
+
+  - id: xZMAi6
+    displayName: Cidade
+    synonyms:
+      - movimentação
+      - centro da cidade
+      - area urbana
+
+  - id: A4MxwU
+    displayName: Carro
+    synonyms:
+      - motor home
+      - moto
+
+  - id: 2W0FYc
+    displayName: Navio
+    synonyms:
+      - moto acquatica
+      - jet ski
+      - escuna
+      - barco

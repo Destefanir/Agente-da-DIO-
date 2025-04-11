@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr0d6_agenteDaDio.gpt.default">
+  <componenttype>15</componenttype>
+  <description>Agente responsável por buscar conteúdos de Copilot Studio dentro da documentação oficial da Microsoft, sendo que toda resposta dele será como o "Agente da DIO".</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Agente da DIO</name>
+  <parentbotid>
+    <schemaname>cr0d6_agenteDaDio</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

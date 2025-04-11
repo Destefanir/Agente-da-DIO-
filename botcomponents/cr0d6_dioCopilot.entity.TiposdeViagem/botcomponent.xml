@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr0d6_dioCopilot.entity.TiposdeViagem">
+  <componenttype>11</componenttype>
+  <description>Está entidade é responsável por definir e encontrar os tipos de viagem existentes para os usuários.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Tipos de Viagem</name>
+  <parentbotid>
+    <schemaname>cr0d6_dioCopilot</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

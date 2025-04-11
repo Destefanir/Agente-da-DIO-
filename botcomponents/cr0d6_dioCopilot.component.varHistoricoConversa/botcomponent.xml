@@ -1,0 +1,10 @@
+<botcomponent schemaname="cr0d6_dioCopilot.component.varHistoricoConversa">
+  <componenttype>12</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>varHistoricoConversa</name>
+  <parentbotid>
+    <schemaname>cr0d6_dioCopilot</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

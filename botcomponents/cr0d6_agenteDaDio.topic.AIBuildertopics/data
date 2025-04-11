@@ -1,0 +1,21 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - buscar informações de ai builder
+      - o que é ai builder
+      - onde encontro informações da ferramenta de AI da power Platform
+
+  actions:
+    - kind: SearchAndSummarizeContent
+      id: DmiUkw
+      userInput: =System.Activity.Text
+
+    - kind: SendActivity
+      id: sendActivity_hAC6Dg
+      activity: Tópico de **AI Builder** encerrado!
+
+inputType: {}
+outputType: {}

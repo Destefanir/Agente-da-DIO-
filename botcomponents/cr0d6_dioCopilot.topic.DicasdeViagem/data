@@ -1,0 +1,137 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  priority: 1
+  intent:
+    triggerQueries:
+      - dicas de viagem
+      - sugestões de viagem
+      - conselhos para viajar
+      - recomendações de viagem
+      - ideias para viagens
+      - ajuda com planejamento de viagem
+      - como planejar uma viagem
+      - melhores destinos para viajar
+      - quero conselhos para viajar para o brasil em 5 dias
+      - viagens para praia no brasil
+      - viagens de motor home
+      - aqui está um exemplo de local
+      - "https://img.freepik.com/fotos-gratis/viajantes-rurais-explorando-os-arredores-juntos_23-2149125448.jpg"
+
+  actions:
+    - kind: SetVariable
+      id: setVariable_pIOPhq
+      variable: Global.varHistoricoConversa
+      value: =Blank()
+
+    - kind: Question
+      id: question_U92Fh8
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var4
+      prompt: |
+        Qual o link de um lugar que é sua inspiração?
+      entity:
+        kind: RegexEntityReference
+        entityId: cr0d6_dioCopilot.entity.UrldeLocais
+
+    - kind: SendActivity
+      id: sendActivity_Dj0rL6
+      activity:
+        text:
+          - Aqui está o seu local
+        attachments:
+          - kind: ImageCardTemplate
+            image: =Topic.Var4
+
+    - kind: Question
+      id: question_lNnV3a
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var3
+      prompt: Qual o tipo de viagem desejada?
+      entity:
+        kind: ClosedListEntityReference
+        entityId: cr0d6_dioCopilot.entity.TiposdeViagem
+        selectedItems:
+          - ahRfLE
+          - skmECD
+          - xZMAi6
+          - A4MxwU
+          - 2W0FYc
+
+    - kind: Question
+      id: question_WKcNF6
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var1
+      prompt: Qual o pais de destimo ?
+      entity: CountryOrRegionPrebuiltEntity
+
+    - kind: Question
+      id: question_PbUbKe
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.varDataInicio
+      prompt: Quando você vai viajar? 
+      entity: DateTimePrebuiltEntity
+
+    - kind: Question
+      id: question_3rIQUu
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.varDataTermino
+      prompt: ...Quando você quer retornar?
+      entity: DateTimePrebuiltEntity
+
+    - kind: SendActivity
+      id: sendActivity_HDHRWk
+      activity: "diferença entre as datas e de : {DateDiff(Topic.varDataInicio, Topic.varDataTermino)}"
+
+    - kind: SendActivity
+      id: sendActivity_1DJqpK
+      activity: |-
+        Você selecionou:
+        Pais - {Topic.Var1}
+        Data da Viagen: {Topic.varDataInicio}
+        Tipo de Viagem - {Topic.Var3}
+
+    - kind: Question
+      id: Question_6clFHV
+      variable: Topic.NumeroOpcoes
+      prompt: Quantas opções de atividades você gostaria?
+      entity: NumberPrebuiltEntity
+
+    - kind: Question
+      id: Question_OJVc6e
+      variable: Topic.Destino
+      prompt: Qual é o destino?
+      entity: CityPrebuiltEntity
+
+    - kind: SendActivity
+      id: SendActivity_rlyFhp
+      activity: |-
+        Aqui estão {Topic.NumeroOpcoes} opções de atividades em {Topic.Destino} para pessoas que estão conhecendo pela primeira vez:
+        1. 🏞️ Atividade 1: Descrição breve
+        2. 🏛️ Atividade 2: Descrição breve
+        3. 🍽️ Atividade 3: Descrição breve
+        4. 🎨 Atividade 4: Descrição breve
+        5. 🏖️ Atividade 5: Descrição breve
+
+    - kind: SetVariable
+      id: setVariable_pNdNRW
+      variable: Global.varHistoricoConversa
+      value: =Topic.Var4
+
+    - kind: SendActivity
+      id: sendActivity_Msm7Wp
+      activity: "O Historico da conversa e : {Global.varHistoricoConversa}"
+
+inputType: {}
+outputType: {}

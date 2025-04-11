@@ -1,0 +1,2 @@
+kind: RegexEntity
+pattern: "^(https?|ftp):\\/\\/[^\\s/$.?#].[^\\s]*$"
